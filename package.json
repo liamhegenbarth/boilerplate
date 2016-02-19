@@ -1,12 +1,9 @@
 {
-  "name": "liamhegenbarth.co.uk",
+  "name": "Boilerplate",
   "version": "1.0.0",
-  "description": "portfolio site for designer-developer liam hegenbarth",
-  "main": "liam.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "liam hegenbarth",
+  "description": "Boilerplate Gulp setup, with Sass and ES6",
+  "main": "main.js",
+  "author": "Liam Hegenbarth",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
