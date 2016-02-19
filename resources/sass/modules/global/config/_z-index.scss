@@ -1,0 +1,17 @@
+
+//==========  Z-index layers  ==========//
+
+// set the z-index of your key layers here
+// set new variables in the stack so we can easily adjust and control
+// combine these variables to keep a relationship between elements, parents and children
+// e.g, parent { z-index: $z-index-front; } 
+// 		child  { z-index: $z-index-front + 1; }
+
+$z-index: (
+	back	: -1,
+	front	: 1,
+	bxslider: 51,
+	nav		: 300,
+	menu	: 600,
+	popup	: 900
+);

@@ -1,0 +1,66 @@
+
+//==========  List styles  ==========//
+
+// list item styles
+%default-list {
+    margin: 0 0 $paragraph-margin;
+}
+
+%default-ul {
+    list-style: disc;
+    @extend %default-list;
+}
+
+%default-ol {
+    list-style: decimal;
+    @extend %default-list;
+}
+
+// list item reset
+%reset-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+//==========  Buttons and default styles  ==========//
+
+// base button styles
+// extend for different button styles
+%button {
+    color: $color-white;
+    text-align: center;
+    border: none;
+    background: $color-primary;
+}
+
+%hover {
+    color: $color-white;
+    background: $color-secondary;
+}
+
+// extend for default .read-more
+%read-more {
+    @extend %button;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+
+    &:hover {
+        @extend %hover;
+    }
+}
+
+// alternate button style for staff list
+%button-profile {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: $border-radius;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    &:hover {
+        color: $color-white;
+        background: $color-primary;
+    }
+}

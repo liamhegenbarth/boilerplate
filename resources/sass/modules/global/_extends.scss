@@ -1,0 +1,76 @@
+//==========  Extends  ==========//
+
+// use these classes and placeholders with @extends
+// classes defined here will be output in the final compiled css
+// placeholders will not and are only used within sass
+ 
+// note - extends will not work within media queries
+
+
+//==========  Helpers and resets  ==========//
+
+// set on .inner containers
+%full-width { 
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+// clear floats on elements after container
+// prevents elements after from wrapping
+%clear-fix {
+    
+    &:after {
+        content: '';
+        clear: both;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+// svg icon reset - use to hide any icons
+%no-icon {
+    min-height: 0;
+
+    .icon-link {
+        min-height: 0;
+        padding-left: 0;
+    }
+
+    .icon {
+        display: none;
+    }
+}
+
+// reset for images, prevents whitespace around image
+%image {
+    display: block;
+    width: 100%;
+}
+
+// default style for blockquotes
+%blockquote {
+    margin: 0;
+    
+    // left quote marks
+    &:before {
+        content: '\201C';
+    }
+    
+    // right quote marks
+    &:after {
+        content: '\201D';
+    }
+    
+    // reset for p tags that are put in by the CMS editor
+    p {
+        display: inline;
+        margin: 0;
+    }
+}
+
+// add as class to element or extend
+.hidden {
+    display: none;
+}

@@ -1,0 +1,125 @@
+//==========  Mixins  ==========//
+
+// use these mixins with @includes
+// you can pass in different options to the mixin to change the output
+// you can also perform logic, etc within mixins to provide different outcomes
+// 
+// mixins can be used inside media queries
+
+
+//==========  Resets and defaults  ==========//
+
+// use to reset the default browser styling of elements
+// usually, this will be form fields - appearance(none)
+
+@mixin appearance($properties) {
+	-webkit-appearance: $properties;
+	-moz-appearance: $properties;
+}
+
+// use to change the colour of placeholder text on inputs
+// call on parent element, not input itself
+@mixin placeholder($color) {
+	::-webkit-input-placeholder { color: $color; }
+	:-moz-placeholder           { color: $color; }
+	::-moz-placeholder          { color: $color; }
+	:-ms-input-placeholder      { color: $color; }  
+}
+
+
+//==========  Font-face helpers  ==========//
+
+// use to import all versions of supported font files
+// place these in a directory at the root called /fonts/
+// make sure this is noted before the go live as only default directories are moved live
+
+@mixin font-face($family) {
+
+	@each $font, $weight in $fonts {  
+
+		@font-face {
+			font-family: '#{$family}';
+			src: url('../../../fonts/#{$family}-#{$font}-webfont.eot');
+			src: url('../../../fonts/#{$family}-#{$font}-webfont.eot?#iefix') format('embedded-opentype'),
+				 url('../../../fonts/#{$family}-#{$font}-webfont.woff2') format('woff2'),
+				 url('../../../fonts/#{$family}-#{$font}-webfont.woff') format('woff'),
+				 url('../../../fonts/#{$family}-#{$font}-webfont.ttf') format('truetype'),
+				 url('../../../fonts/#{$family}-#{$font}-webfont.svg##{$family}-#{$font}') format('svg');
+			font-weight: $weight;
+			font-style: normal;
+		}
+
+	}
+}
+
+
+//==========  Alignment helpers  ==========//
+
+// position elements easily - x, y, both axis
+// pass in the position (defaults to absolute)
+// if you don't want the position being set again, pass in - none
+
+@mixin centreX($position: absolute, $transform: null) {
+
+	@if $position != none { position: $position; }
+
+	left: 50%;
+	transform: translateX(-50%) $transform;
+}
+
+@mixin centreY($position: absolute, $transform: null) {
+
+	@if $position != none { position: $position; }
+
+	top: 50%;
+	transform: translateY(-50%) $transform;
+}
+
+@mixin centre($position: absolute, $transform: null) {
+
+	@if $position != none { position: $position; }
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) $transform;   
+}
+
+// sets an element to cover the full width and height of its parent
+// defaults to fixed, ideal use for splash screens
+// also useful with absolute set for sliders
+
+@mixin coverX($position: fixed) {
+	position: $position;
+	right: 0;
+	left: 0;
+}
+
+@mixin coverY($position: fixed) {
+	position: $position;
+	top: 0;
+	bottom: 0;
+}
+
+@mixin cover($position: fixed) {
+	position: $position;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+
+//==========  Visibility helpers  ==========//
+
+// use to toggle the visibility of elements
+// typically used in combination with transitions for fade-in / fade-out effect
+
+@mixin hidden() {
+	visibility: hidden;
+	opacity: 0;
+}
+
+@mixin visible() {
+	visibility: visible;
+	opacity: 1;
+}

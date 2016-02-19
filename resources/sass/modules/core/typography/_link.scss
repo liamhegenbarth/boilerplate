@@ -1,0 +1,11 @@
+
+// Default link events
+a {
+	color: $color-primary;
+	text-decoration: none;
+	transition: all t(link) ease-out;
+
+	&:hover {
+		color: $color-secondary;
+	}
+}

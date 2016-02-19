@@ -1,0 +1,30 @@
+
+//==========  Media Queries  ==========//
+
+// simple function to convert our max-width variable from px to ems
+// pixel based media queries get compiled and ordered before em based media queries
+// our media queries would then not be in the correct order (mobile => desktop)
+
+@function em($px, $base: 16px) 
+{
+	@return ($px / $base ) * 1em; 
+}
+
+// max-width (site) test
+$maxWidth:  "only screen and (min-width : " + em($max-width) + ")"; // $max-width
+
+// min-width tests
+$mobile:    "only screen and (min-width : 25em)";  		//  400px
+$mobileL:   "only screen and (min-width : 32.5em)";  	//  520px
+$mobileXL:  "only screen and (min-width : 40em)";  		//  640px
+$tablet:    "only screen and (min-width : 50em)";  		//  800px
+$tabletXL:  "only screen and (min-width : 60em)";  		//  960px
+$laptop:    "only screen and (min-width : 80em)";  		// 1280px
+$desktop:   "only screen and (min-width : 100em)"; 		// 1600px
+$desktopXL: "only screen and (min-width : 125em)"; 		// 2000px
+
+// min-height tests
+$mobileH: 	"only screen and (min-height : 20em)";		//  320px
+$tabletH:	"only screen and (min-height : 30em)";		//  480px
+$laptopH:	"only screen and (min-height : 45em)";		//  720px
+$desktopH:	"only screen and (min-height : 57.5em)"; 	//  920px

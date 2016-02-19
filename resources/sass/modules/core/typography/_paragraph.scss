@@ -1,0 +1,15 @@
+
+// Clear paragraph styles
+p {
+	margin: 0;
+}
+
+// Reset strong tags
+strong {
+	font-weight: $font-bold;
+}
+
+// Reset hr tags 
+hr {
+	border: $border;
+}

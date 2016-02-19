@@ -1,0 +1,16 @@
+//==========  Animations  ==========//
+
+// define custom animations here
+// make sure to use .mdzrno-cssanimations for fallbacks where there is no support
+// IE10+, webkit, moz
+
+// form animations on error
+
+@keyframes hippyshake {
+    0% { transform: translateX(2px) }
+    20% { transform: translateX(0) }
+    40% { transform: translateX(-2px) }
+    60% { transform: translateX(0) }
+    80% { transform: translateX(2px) }
+    100% { transform: translateX(0) }
+}

@@ -1,0 +1,62 @@
+//========== Functions  ==========//
+
+// call these functions with just their name
+// functions must return a value
+// you can pass in different options to the function to change the output
+// you can also perform logic, etc within functions to provide different outcomes
+
+
+// create a responsive square using padding bottom
+// returns a value to match the column widths passed in
+@function square($columns, $gutter) 
+{
+	@return (100 / $columns) - $gutter;
+}
+
+
+// return the decimal value of the equivalent percentage
+@function decimal($percentage)
+{
+	@return ($percentage / 1%) * 0.01;
+}
+
+
+// returns a new font-size value inbetween our defined $h sizes
+@function step-font-size($small, $large) 
+{
+	@return $large - (($large - $small) * 0.5);
+}
+
+
+// returns a transition from the transitions map
+@function transition($transition)
+{
+	@return map-get($transitions, $transition);
+}
+
+// shortcut for transitions
+@function t($transition) 
+{
+	@return transition($transition);
+}
+
+
+// returns a z-index from the z-index map
+@function z-index($index)
+{
+	@return map-get($z-index, $index);
+}
+
+// shortcut for z-index
+@function z($index) 
+{
+	@return z-index($index);
+}
+
+
+// shortcut for section colours
+// returns a colour from the sections map
+@function section($index) 
+{
+	@return map-get($sections, $index);
+}

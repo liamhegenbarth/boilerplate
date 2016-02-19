@@ -1,0 +1,49 @@
+
+//==========  Colors  ==========//
+
+// set our colour variables
+// avoid using obvious declarative names as the colours may not always match the name
+// e.g, $colour-orange
+// 
+// we also create lighter and darker tones for use with hover states, etc.
+
+$color-primary: 		#ef4d16; 						// the brand colour
+$color-primary-light:	lighten($color-primary, 5%);	// the brand colour - lighter
+$color-primary-dark:	darken($color-primary, 5%);		// the brand colour - darker
+
+$color-secondary: 		#3e4545; 						// the accent colour
+$color-secondary-light:	lighten($color-secondary, 5%);	// the accent colour - lighter
+$color-secondary-dark:	darken($color-secondary, 5%);	// the accent colour - darker
+
+
+//==========  Tones  ==========//
+
+// set grey tones variables
+// these will typically be used for borders and form inputs
+// again, we also create lighter and darker tones for use with hover states, etc.
+
+$color-lightgrey:		#eee;							// a default light grey
+$color-lightgrey-light:	lighten($color-lightgrey, 5%);	// a default light grey - lighter
+$color-lightgrey-dark:	darken($color-lightgrey, 5%);	// a default light grey - darker
+
+$color-midgrey:			#bbb;	 						// a default mid grey
+$color-midgrey-light:	lighten($color-midgrey, 5%);	// a default mid grey - lighter
+$color-midgrey-dark:	darken($color-midgrey, 5%);		// a default mid grey - darker
+
+$color-darkgrey:		#85898a;						// a default dark grey
+$color-darkgrey-light:	lighten($color-darkgrey, 5%);	// a default dark grey - lighter
+$color-darkgrey-dark:	darken($color-darkgrey, 5%);	// a default dark grey - darker
+
+$color-white: 			#fff;							// a default white
+$color-black: 			#111;							// a default black
+
+
+//==========  Text colors  ==========//
+
+// set our default text colours for titles, paragraphs, etc.
+
+$color-text:	#717f81;								// body text colour
+$color-sub:		#5d4f4a;								// sub and intro text colour
+$color-title:	$color-primary;							// heading text colour
+
+

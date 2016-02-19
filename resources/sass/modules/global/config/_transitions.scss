@@ -1,0 +1,17 @@
+
+//==========  Transitions  ==========//
+
+// set transition speeds for our main animating elements
+
+$transitions: (
+	default	: 0.3s, // a default speed
+	link	: 0.2s, // for all links, set in /core/_typography.scss
+	icon	: 0.3s, // for all icons, set in /core/_icons.scss
+	menu	: 0.3s, // timings for the mobile icon animation
+	nav		: 0.3s, // for the mobile navigation transition in
+	submenu	: 0.2s, // for desktop navigation dropdowns
+	forms	: 0.3s  // for form inputs, mainly focus and errors
+);
+
+// shortcut variable for our default transition
+$transition: all map-get($transitions, default) ease-out;

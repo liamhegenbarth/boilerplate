@@ -1,0 +1,24 @@
+
+//==========  Site structure  ==========//
+
+// the max-width the site will be
+$max-width: 1300px;
+
+// the padding around the body on devices
+// only used up to the max-width viewport
+$site-padding: 1.5rem;
+
+// height of the cms admin bar
+$admin-bar: 30px;
+
+// set the aspect ratio of any videos
+$player: (100% / 16) * 9;
+
+
+//==========  Blocks layout  ==========//
+
+// used throughout our modules
+// keep spacing between elements consistent
+
+$block-padding: 1.5rem;
+$block-margin: 3rem;

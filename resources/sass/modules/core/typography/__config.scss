@@ -1,0 +1,79 @@
+
+//==========  Fonts  ==========//
+
+// call our font families and fallbacks
+// variables for title, body and sub paragraphs are called in /core/_typography.scss
+
+$font-family-title: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;	// for heading tags
+$font-family-body:  $font-family-title;									// for body text
+$font-family-sub:   'Bitter', 'Georgia', serif;					// for sub and intro text						
+
+
+//==========  Font weights  ==========//
+
+// normal and bold are used in our modules as defaults
+// set your most commonly used weights to use these if possible
+
+$font-normal: 	300;	// Light 300
+$font-bold: 	400;	// Normal 400
+
+
+//==========  Font styles  ==========//
+
+// set font-style in variable so its easy to update
+$font-italic: italic;
+
+
+//==========  Font sizes  ==========//
+
+// set sizes of heading tags
+// we can then call these on any element to duplicate the tag
+
+$h1: 2.8rem;
+$h2: 2.2rem;
+$h3: 1.7rem;
+$h4: 1.5rem;
+$h5: 1.3rem;
+$h6: 1.1rem;
+
+// set the default body font size
+$font-size-body: 1.1rem;
+
+// set the mobile navigation font size
+$font-size-nav-mobile: 2rem;
+
+// set the main navigation font size
+$font-size-nav: 1rem;
+
+// set a default form label font size
+$font-size-label: 1.1rem;
+
+
+//==========  Font margins  ==========//
+
+// bottom margin for headings and paragraphs
+// use to control the flow of content on the page
+// lists in content will use our paragraph variable
+
+$heading-margin: 2rem;
+$paragraph-margin: 2rem;
+
+
+
+//==========  Borders  ==========//
+
+// build our default border style 
+
+$border-size: 1px;
+$border-style: solid;
+$border-color: $color-lightgrey;
+
+// combine border variables into a default
+// this is used throughout our modules as a base
+$border: $border-size $border-style $border-color;
+
+// set a default border-radius
+// this is used in our forms and search styling
+$border-radius: 4px;
+
+
