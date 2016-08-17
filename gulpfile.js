@@ -49,8 +49,6 @@ var Site = {
 
 	dev_domain 	: process.env.PWD.split('/').reverse()[0],
 
-	// live_domain : config.site.live_domain,
-
 	paths : {
 
 		javascript : {

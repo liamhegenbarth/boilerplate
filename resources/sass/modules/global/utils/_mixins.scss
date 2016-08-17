@@ -7,19 +7,42 @@
 // mixins can be used inside media queries
 
 
+
+//==========  Debugging  ==========//
+
+// output map keys and values to console
+// typically used with map arguments that are passed to mixins
+// allows parameters for mixin to be printed to console
+@mixin debug($mixin, $params)
+{
+	@debug '=======  #{$mixin}() options  =======';
+	
+	// loop through map, ignoring debug key
+	@each $key, $value in $params
+	{
+		@if $key != debug
+		{
+			@debug '#{$key}	( #{$value} )';
+		}
+	}
+}
+
+
 //==========  Resets and defaults  ==========//
 
 // use to reset the default browser styling of elements
 // usually, this will be form fields - appearance(none)
 
-@mixin appearance($properties) {
+@mixin appearance($properties) 
+{
 	-webkit-appearance: $properties;
 	-moz-appearance: $properties;
 }
 
 // use to change the colour of placeholder text on inputs
 // call on parent element, not input itself
-@mixin placeholder($color) {
+@mixin placeholder($color) 
+{
 	::-webkit-input-placeholder { color: $color; }
 	:-moz-placeholder           { color: $color; }
 	::-moz-placeholder          { color: $color; }
@@ -33,9 +56,10 @@
 // place these in a directory at the root called /fonts/
 // make sure this is noted before the go live as only default directories are moved live
 
-@mixin font-face($family) {
-
-	@each $font, $weight in $fonts {  
+@mixin font-face($family) 
+{
+	@each $font, $weight in $fonts 
+	{  
 
 		@font-face {
 			font-family: '#{$family}';
@@ -59,24 +83,24 @@
 // pass in the position (defaults to absolute)
 // if you don't want the position being set again, pass in - none
 
-@mixin centreX($position: absolute, $transform: null) {
-
+@mixin centreX($position: absolute, $transform: null) 
+{
 	@if $position != none { position: $position; }
 
 	left: 50%;
 	transform: translateX(-50%) $transform;
 }
 
-@mixin centreY($position: absolute, $transform: null) {
-
+@mixin centreY($position: absolute, $transform: null)
+{
 	@if $position != none { position: $position; }
 
 	top: 50%;
 	transform: translateY(-50%) $transform;
 }
 
-@mixin centre($position: absolute, $transform: null) {
-
+@mixin centre($position: absolute, $transform: null) 
+{
 	@if $position != none { position: $position; }
 
 	top: 50%;
@@ -88,20 +112,26 @@
 // defaults to fixed, ideal use for splash screens
 // also useful with absolute set for sliders
 
-@mixin coverX($position: fixed) {
-	position: $position;
+@mixin coverX($position: fixed) 
+{	
+	@if $position != none { position: $position; }
+
 	right: 0;
 	left: 0;
 }
 
-@mixin coverY($position: fixed) {
-	position: $position;
+@mixin coverY($position: fixed) 
+{	
+	@if $position != none { position: $position; }
+
 	top: 0;
 	bottom: 0;
 }
 
-@mixin cover($position: fixed) {
-	position: $position;
+@mixin cover($position: fixed) 
+{	
+	@if $position != none { position: $position; }
+	
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -114,12 +144,29 @@
 // use to toggle the visibility of elements
 // typically used in combination with transitions for fade-in / fade-out effect
 
-@mixin hidden() {
+@mixin hidden() 
+{
 	visibility: hidden;
 	opacity: 0;
 }
 
-@mixin visible() {
+@mixin visible() 
+{
 	visibility: visible;
 	opacity: 1;
+}
+
+
+//==========  Not Null helpers  ==========//
+
+// use to output a rule, dependant on the value of the variable
+// set to 0 or none if not required (no output)
+// typically used for setting border-radius rules, if a value is set
+
+@mixin if($variable, $rule) 
+{
+	@if ( $variable != 0 ) and ( $variable != none )
+	{
+		#{ map-keys($rule) }: map-values($rule);
+	}
 }

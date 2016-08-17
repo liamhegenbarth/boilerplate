@@ -1,28 +1,14 @@
 
-// import our global modules
-// import $$ from 'selectors'
-
-// import { 
-// 	logger as log, 
-// 	render, 
-// 	createIcon 
-// } from 'helpers'
-
-// import match from 'match'
-
+//==========  Import modules  ==========//
 
 // import our core modules
+import '../modules/core/module'
 
 
 // import our library modules
+import '../modules/library/module'
 
 
 // import our local modules
-// import custom from '../modules/local/custom'
+import '../modules/local/module'
 
-
-// finally, import our footer resize module
-// this should always be the last module to be imported
-import footer 	from '../modules/core/resize-footer'
-
-	

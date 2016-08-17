@@ -1,0 +1,188 @@
+//========== Functions  ==========//
+
+// call these functions with just their name
+// functions must return a value
+// you can pass in different options to the function to change the output
+// you can also perform logic, etc within functions to provide different outcomes
+
+
+
+// test if a value appears in a list
+// returns boolean if value is present
+// (as opposed to index itself)
+@function index-of( $list, $value )
+{
+	@return if( type-of( index($list, $value) ) == 'null', false, true );
+}
+
+
+// strip the unit from a value
+// returns unitless value
+@function strip-unit( $value )
+{
+	@return $value / ($value * 0 + 1);
+}
+
+
+
+// create a responsive square using padding bottom
+// returns a value to match the column widths passed in
+@function square($columns, $gutter) 
+{
+	@return (100 / $columns) - $gutter;
+}
+
+
+// return the decimal value of the equivalent percentage
+@function decimal($percentage)
+{
+	@return ($percentage / 1%) * 0.01;
+}
+
+
+// returns a new font-size value inbetween our defined $h sizes
+@function step-font-size($small, $large) 
+{
+	@return $large - (($large - $small) * 0.5);
+}
+
+
+
+// returns a transition from the transitions map
+@function transition($transition)
+{
+	@return map-get($transitions, $transition);
+}
+
+// shortcut for transitions
+@function t($transition) 
+{
+	@return transition($transition);
+}
+
+
+
+// returns a z-index from the z-index map
+@function z-index($index)
+{
+	@return map-get($z-index, $index);
+}
+
+// shortcut for z-index
+@function z($index) 
+{
+	@return z-index($index);
+}
+
+
+
+// returns a media query from the breakpoints map
+@function query($breakpoint)
+{
+	@return map-get($breakpoints, $breakpoint);
+}
+
+// shortcut for query
+@function q($breakpoint)
+{
+	@return query($breakpoint);
+}
+
+
+// shortcut for section colours
+// returns a colour from the sections map
+@function section($index) 
+{
+	@return map-get($sections, $index);
+}
+
+
+
+// get previous key from map
+// return same key if first
+// return error if not found
+@function get-prev($map, $string, $step: 1)
+{
+
+	$keys 	: map-keys($map);
+	$values : map-values($map);
+
+	$keys-index 	: index($keys, $string);
+	$values-index 	: index($values, $string);
+
+
+	@if $keys-index != null and $keys-index > 0
+	{
+		@if $keys-index > 1
+		{
+			@return nth($keys, $keys-index - $step);
+		}
+		@else
+		{
+			@warn 'First key already selected';
+			@return nth($keys, $keys-index);
+		}
+	}
+	@elseif $values-index != null and $values-index > 0
+	{
+		@if $values-index > 1
+		{
+			@return nth($values, $values-index - $step);
+		}
+		@else
+		{
+			@warn 'First value already selected';
+			@return nth($values, $values-index);
+		}
+	}
+	@else
+	{
+		@error 'No matching key or value found in this map';
+	}
+
+}
+
+
+// get next key from map
+// return same key if last
+// return error if not found
+@function get-next($map, $string, $step: 1)
+{
+
+	$keys 	: map-keys($map);
+	$values : map-values($map);
+
+	$keys-index 	: index($keys, $string);
+	$values-index 	: index($values, $string);
+
+
+	@if $keys-index != null and $keys-index > 0
+	{
+		@if $keys-index < length($keys)
+		{
+			@return nth($keys, $keys-index + $step);
+		}
+		@else
+		{
+			@warn 'Last key already selected';
+			@return nth($keys, $keys-index);
+		}
+	}
+	@elseif $values-index != null and $values-index > 0
+	{
+		@if $values-index < length($values)
+		{
+			@return nth($values, $values-index + $step);
+		}
+		@else
+		{
+			@warn 'Last value already selected';
+			@return nth($values, $values-index);
+		}
+	}
+	@else
+	{
+		@error 'No matching key or value found in this map';
+	}
+
+}

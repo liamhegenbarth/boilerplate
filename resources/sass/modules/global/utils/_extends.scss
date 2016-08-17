@@ -70,6 +70,12 @@
     }
 }
 
+%font-action {
+    font-size: $font-size-action;
+    font-weight: $font-bold;
+    letter-spacing: 0.2em;
+}
+
 // add as class to element or extend
 .hidden {
     display: none;

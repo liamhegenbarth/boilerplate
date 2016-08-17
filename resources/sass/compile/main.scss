@@ -1,19 +1,24 @@
+
+//==========  Import modules  ==========//
+
 // import our global modules
-@import '../modules/global/normalise';
 @import '../modules/global/config/';
-@import '../modules/global/fraction';
-@import '../modules/global/functions';
-@import '../modules/global/extends';
-@import '../modules/global/mixins';
-@import '../modules/global/layouts';
-@import '../modules/global/animations';
+@import '../modules/global/utils/';
 
 
 // import our core files
-@import '../modules/core/typography/';
+@import '../modules/core/layout/';
+@import '../modules/core/nav/';
 
 
 // import our library modules
+@import '../modules/library/module/';
 
 
 // import our local modules
+@import '../modules/local/typography/';
+
+@import '../modules/local/header/';
+@import '../modules/local/hero/';
+@import '../modules/local/main/';
+@import '../modules/local/footer/';
