@@ -4,6 +4,27 @@ p {
 	margin: 0;
 }
 
+// Content styles
+.content {
+	
+	// Default paragraphs
+	p {
+		margin: 0 0 $paragraph-margin;
+
+		&.intro {
+			padding-bottom: $paragraph-margin;
+			border-bottom: $border;
+			color: $color-sub;
+			font-family: $font-family-sub;
+			font-size: $h4;
+			
+			@media #{$mobileXL} {
+				font-size: $h3;
+			}
+		}
+	}
+}
+
 // Reset strong tags
 strong {
 	font-weight: $font-bold;

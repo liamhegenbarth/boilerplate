@@ -2,17 +2,4 @@
 // Default .button class
 .button {
     @extend %button;
-    display: inline-block;
-    padding: 0.5rem 3rem;
-    border-radius: $border-radius;
-    transition: $transition;
-
-    &:hover {
-        @extend %hover;
-    }
-
-    a {
-        color: inherit;
-        transition: inherit;
-    }
 }

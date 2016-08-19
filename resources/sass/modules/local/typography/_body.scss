@@ -1,17 +1,5 @@
-// Increase font size as we move through viewports
-// this will also increase our rem values
-// comment in desktop and larger for full-width layouts
-html { 
-	font-size: 95%; 
 
-	@media #{$mobileXL} 	{ font-size: 100%; }
-	@media #{$tabletXL} 	{ font-size: 105%; }
-	// @media #{$desktop} 		{ font-size: 110%; }
-	// @media #{$desktopXL} 	{ font-size: 115%; }
-}
-
-
-// Body text
+// body text
 body {
 	color: $color-text;
 	font-family: $font-family-body;

@@ -5,7 +5,7 @@
  * Assign gulp and dependancies to variables
  * 
  */
-// var config		= require('./config'),
+
 var	project		= require('./package'),
 	gulp 		= require('gulp'),
 	browserify 	= require('browserify'),
@@ -22,7 +22,7 @@ var	project		= require('./package'),
 	sassImport 	= require('gulp-sass-import'),
 	prefix 		= require('gulp-autoprefixer'),
 	sourcemap  	= require('gulp-sourcemaps'),
-	gcmq 		= require('gulp-group-css-media-queries'),
+	gmmq 		= require('gulp-merge-media-queries'),
 	minify 		= require('gulp-minify-css'),
 
 	uglify 		= require('gulp-uglify'),
@@ -47,7 +47,7 @@ var Site = {
 
 	builder 	: project.author || process.env.USER,
 
-	dev_domain 	: process.env.PWD.split('/').reverse()[0],
+	domain 		: 'localhost:3000',
 
 	paths : {
 
@@ -122,7 +122,7 @@ gulp.task('sass', ['sass-dev'], function() {
 		.pipe(plumber({ errorHandler : onError }))
 		.pipe(sassImport())
 		.pipe(sass())
-		.pipe(gcmq())
+		.pipe(gmmq())
 		.pipe(prefix({ cascade : false }))
 		.pipe(minify())
 		.pipe(rename({
@@ -145,7 +145,14 @@ gulp.task('scripts', function(done) {
 		var tasks = files.map(function(entry) {
 
 			return browserify({ entries : [entry] })
-				.transform(babelify, { presets : ['es2015'] })
+				.transform(babelify, { 
+					presets : ['es2015'], 
+					plugins: [
+					'transform-es2015-block-scoping',
+				      [ 'transform-es2015-classes', { loose : true } ],
+				      'transform-proto-to-assign',
+      				]
+				})
 				.bundle()
 				.on('error', function(err) {
 					err.name = 'Error';

@@ -6,7 +6,7 @@
 
 $font-family-title: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;	// for heading tags
 $font-family-body:  $font-family-title;									// for body text
-$font-family-sub:   'Bitter', 'Georgia', serif;					// for sub and intro text						
+$font-family-sub:   'Playfair Display', serif;							// for sub and intro text						
 
 
 //==========  Font weights  ==========//
@@ -38,6 +38,9 @@ $h6: 1.1rem;
 
 // set the default body font size
 $font-size-body: 1.1rem;
+
+// set the action button font size
+$font-size-action: $font-size-body - 0.3;
 
 // set the mobile navigation font size
 $font-size-nav-mobile: 2rem;
@@ -74,6 +77,6 @@ $border: $border-size $border-style $border-color;
 
 // set a default border-radius
 // this is used in our forms and search styling
-$border-radius: 4px;
+$border-radius: 10px;
 
 

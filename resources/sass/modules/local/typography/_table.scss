@@ -1,32 +1,29 @@
 // Default table styles
 // Add <div> wrapper to allow mobile scrolling
-.column {
+.table-scroll {
+	overflow: scroll;
+	margin: 0 0 $paragraph-margin;
 
-	.table-scroll {
-		overflow: scroll;
-		margin: 0 0 $paragraph-margin;
+	table {
+		width: 100%;
+		
+		// style header <th> block in brand colours
+		th {
+			padding: ($block-padding * 2/3) $block-padding;
+			border: 2px solid $color-primary-dark;
+			background: $color-primary;
+			color: $color-white;
+			font-family: $font-family-sub;
+		}
 
-		table {
-			width: 100%;
-			
-			// style header <th> block in brand colours
-			th {
-				padding: ($block-padding * 2/3) $block-padding;
-				border: 2px solid $color-primary-dark;
-				background: $color-primary;
-				color: $color-white;
-				font-family: $font-family-sub;
-			}
+		td {
+			padding: $block-padding;
+			border: 2px solid $color-lightgrey;
+			vertical-align: top;
+		}
 
-			td {
-				padding: $block-padding;
-				border: 2px solid $color-lightgrey;
-				vertical-align: top;
-			}
-
-			p {
-				margin: 0;
-			}
+		p {
+			margin: 0;
 		}
 	}
 }

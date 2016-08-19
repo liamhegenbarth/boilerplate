@@ -3,3 +3,17 @@
 ul, ol {
 	@extend %reset-ul;
 }
+
+// Content styles
+.content {
+	
+	// New default <ul> lists
+	* + ul {
+		@extend %default-ul;
+	}
+	
+	// New default <ol> lists
+	* + ol {
+		@extend %default-ol;
+	}
+}
